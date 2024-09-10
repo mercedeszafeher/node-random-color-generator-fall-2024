@@ -1,7 +1,40 @@
 import chalk from 'chalk';
 import randomColor from 'randomcolor';
 
-const colorOfBlock = randomColor();
+const args = process.argv.slice(2);
+
+let hue;
+let luminosity;
+
+if (args.length === 2) {
+  hue = args[0];
+  luminosity = args[1];
+} else if (args.length === 1) {
+  if (['light', 'dark', 'bright'].includes(args[0].toLowerCase())) {
+    luminosity = args[0];
+  } else {
+    hue = args[0];
+  }
+}
+
+let colorOfBlock;
+
+if (hue && luminosity) {
+  colorOfBlock = randomColor({
+    hue: hue,
+    luminosity: luminosity,
+  });
+} else if (hue) {
+  colorOfBlock = randomColor({
+    hue: hue,
+  });
+} else if (luminosity) {
+  colorOfBlock = randomColor({
+    luminosity: luminosity,
+  });
+} else {
+  colorOfBlock = randomColor();
+}
 
 const blockWidth = 31;
 const colorText = `${colorOfBlock}`;

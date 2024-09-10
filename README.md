@@ -2,7 +2,7 @@
 
 ### This is a simple Node.js command-line application that generates and prints a block of # characters colored with a random color. The random color is displayed as a hex code, and the user has the option to specify the hue and luminosity of the color.
 
-##Features
+## Features
 
 - Generate a random color block in the terminal.
 - Display the hex code of the generated color in the center of the block.
