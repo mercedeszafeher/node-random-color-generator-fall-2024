@@ -11,4 +11,4 @@ const rightPadding = totalPadding - leftPadding - colorText.length;
 
 const printingRandomColor = ` ###############################\n ###############################\n ###############################\n #####                     #####\n #####${' '.repeat(leftPadding)}${colorText}${' '.repeat(rightPadding)}#####\n #####                     #####\n ###############################\n ###############################\n ###############################`;
 
-console.log(printingRandomColor);
+console.log(chalk.hex(colorOfBlock)(printingRandomColor));
