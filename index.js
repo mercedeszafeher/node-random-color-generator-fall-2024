@@ -37,11 +37,10 @@ if (hue && luminosity) {
 }
 
 const blockWidth = 31;
-const colorText = `${colorOfBlock}`;
-const totalPadding = blockWidth - colorText.length - 3;
+const totalPadding = blockWidth - colorOfBlock.length - 3;
 const leftPadding = Math.floor(totalPadding / 3);
-const rightPadding = totalPadding - leftPadding - colorText.length;
+const rightPadding = totalPadding - leftPadding - colorOfBlock.length;
 
-const printingRandomColor = ` ###############################\n ###############################\n ###############################\n #####                     #####\n #####${' '.repeat(leftPadding)}${colorText}${' '.repeat(rightPadding)}#####\n #####                     #####\n ###############################\n ###############################\n ###############################`;
+const printingRandomColor = ` ###############################\n ###############################\n ###############################\n #####                     #####\n #####${' '.repeat(leftPadding)}${colorOfBlock}${' '.repeat(rightPadding)}#####\n #####                     #####\n ###############################\n ###############################\n ###############################`;
 
 console.log(chalk.hex(colorOfBlock)(printingRandomColor));
